@@ -1,0 +1,108 @@
+:root {
+    --background-color: #fff;
+    --text-color: #333;
+    --input-bg-color: #f0f0f0;
+    --input-border-color: #ccc;
+    --button-bg-color: #007bff;
+    --button-hover-bg-color: #0056b3;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #121212;
+        --text-color: #e0e0e0;
+        --input-bg-color: #333;
+        --input-border-color: #555;
+        --button-bg-color: #1e90ff;
+        --button-hover-bg-color: #1c7ed6;
+    }
+}
+
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 200%;
+    margin: 0;
+    overflow: auto; /* 스크롤 추가 */
+}
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px; /* 팝업 너비 조정 */
+    min-width: 250px; /* 최소 너비 설정 */
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: auto; /* 스크롤 추가 */
+}
+
+img {
+    max-width: 80%; /* Adjust the percentage as needed */
+    height: auto;
+    margin-bottom: 20px; /* Space between image and other elements */
+}
+
+h1 {
+    margin-bottom: 5px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="email"] {
+    -webkit-appearance: none;
+    border-radius: 0;
+    padding: 10px;
+    width: 100%;
+    max-width: 150px;
+    margin: 10px 0;
+    background-color: var(--input-bg-color);
+    border: 1px solid var(--input-border-color);
+    color: var(--text-color);
+}
+
+button {
+    border: none;
+    background-color: var(--button-bg-color);
+    color: #fff;
+    padding: 8px 16px; /* 버튼 패딩 조정 */
+    font-size: 14px; /* 버튼 폰트 크기 조정 */
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: var(--button-hover-bg-color);
+}
+
+.clear-btn {
+    display: block;
+    margin: 20px auto 0 auto; /* 버튼을 가운데 정렬 */
+}
+
+.region-result {
+    margin-top: 20px;
+}
+  
