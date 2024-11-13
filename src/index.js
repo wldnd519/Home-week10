@@ -11,6 +11,16 @@ const errors = document.querySelector('.errors');
 const loading = document.querySelector('.loading');
 const clearBtn = document.querySelector('.clear-btn');
 
+const calculateColor = async (value) => {
+  let co2Scale = [0, 150, 600, 750, 800];
+  let colors = ['#2AA364', '#F5EB4D', '#9E4229', '#381D02', '#381D02'];
+  let closestNum = co2Scale.sort((a, b) => Math.abs(a - value) - Math.abs(b - value))[0];
+  let num = (element) => element > closestNum;
+  let scaleIndex = co2Scale.findIndex(num);
+  let closestColor = colors[scaleIndex];
+  chrome.runtime.sendMessage({ action: 'updateIcon', value: { color: closestColor } });
+};
+
 const displayCarbonUsage = async (apiKey, region, usageElement, fossilFuelElement, regionElement) => {
   try {
     const response = await axios.get('https://api.co2signal.com/v1/latest', {
@@ -23,6 +33,8 @@ const displayCarbonUsage = async (apiKey, region, usageElement, fossilFuelElemen
     });
     
     const CO2 = Math.floor(response.data.data.carbonIntensity);
+    calculateColor(CO2); // 각 지역의 CO2 값에 따라 색상 설정
+
     loading.style.display = 'none';
     form.style.display = 'none';
     regionElement.textContent = region;
