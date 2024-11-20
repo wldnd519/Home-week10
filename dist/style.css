@@ -31,7 +31,7 @@ body {
     height: 100%;
     width: 200%;
     margin: 0;
-    overflow: auto; /* 스크롤 추가 */
+    overflow: auto;
 }
 
 .container {
@@ -39,18 +39,18 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 400px; /* 팝업 너비 조정 */
-    min-width: 250px; /* 최소 너비 설정 */
+    max-width: 400px;
+    min-width: 250px;
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
-    overflow: auto; /* 스크롤 추가 */
+    overflow: auto;
 }
 
 img {
-    max-width: 80%; /* Adjust the percentage as needed */
+    max-width: 80%; 
     height: auto;
-    margin-bottom: 20px; /* Space between image and other elements */
+    margin-bottom: 20px; 
 }
 
 h1 {
@@ -86,8 +86,8 @@ button {
     border: none;
     background-color: var(--button-bg-color);
     color: #fff;
-    padding: 8px 16px; /* 버튼 패딩 조정 */
-    font-size: 14px; /* 버튼 폰트 크기 조정 */
+    padding: 8px 16px; 
+    font-size: 14px; 
     cursor: pointer;
     border-radius: 4px;
     margin-top: 15px;
@@ -99,7 +99,7 @@ button:hover {
 
 .clear-btn {
     display: block;
-    margin: 20px auto 0 auto; /* 버튼을 가운데 정렬 */
+    margin: 20px auto 0 auto;
 }
 
 .region-result {
